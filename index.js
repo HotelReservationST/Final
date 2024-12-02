@@ -16,7 +16,7 @@ $(document).ready(function () {
       let password = $("#LoginPassword").val(); // Update with the appropriate password input ID
 
       // Perform an AJAX request to validate the login
-      $.post("./php/login.php", {
+      $.post("login.php", {
           username: username,
           password: password
       }, function (data) {
@@ -41,7 +41,7 @@ $(document).ready(function () {
       let Password = $("#LoginAdminPassword").val(); // Update with the appropriate password input ID
 
       // Perform an AJAX request to validate the login
-      $.post("./php/adminlogin.php", {
+      $.post("adminlogin.php", {
           Username: Username,
           Password: Password
       }, function (data) {
@@ -70,7 +70,7 @@ let booking_accommodation = $("#inputAcmo").val();
 //TRANSFER THE DATA TO saveBooking.php
 // Ask for confirmation before adding data
 if (confirm("Are you sure you want to add this booking?")) {
-$.post("./php/saveBooking.php", // <---THE LOCATION OF THE FILE saveBooking.php
+$.post("saveBooking.php", // <---THE LOCATION OF THE FILE saveBooking.php
 {
     f_name: booking_fname, //<--- ASIGN THE DATA FROM INPUT BOXES TO EACH COLUMNS IN THE DATA BASE
     l_name: booking_lname,
@@ -113,7 +113,7 @@ function saveAdmin(){
   //TRANSFER THE DATA TO saveNewAccount.php
   // Ask for confirmation before adding data
   if (confirm("Are you sure you want to add this new account?")) {
-  $.post("./php/saveNewAccount.php", // <---THE LOCATION OF THE FILE saveNewAccount.php
+  $.post("saveNewAccount.php", // <---THE LOCATION OF THE FILE saveNewAccount.php
   {
       fname: admin_fname, //<--- ASIGN THE DATA FROM INPUT BOXES TO EACH COLUMNS IN THE DATA BASE
       lname: admin_lname,
@@ -146,7 +146,7 @@ function saveClient(){
   //TRANSFER THE DATA TO saveNewAccount.php
   // Ask for confirmation before adding data
   if (confirm("Are you sure you want to regester this account?")) {
-  $.post("./php/saveNewClient.php", // <---THE LOCATION OF THE FILE saveNewAccount.php
+  $.post("saveNewClient.php", // <---THE LOCATION OF THE FILE saveNewAccount.php
   {
       Fname: client_Fname, //<--- ASIGN THE DATA FROM INPUT BOXES TO EACH COLUMNS IN THE DATA BASE
       Lname: client_Lname,
@@ -192,7 +192,7 @@ function saveCottage(){
   //TRANSFER THE DATA TO saveNewAccount.php
   // Ask for confirmation before adding data
   if (confirm("Are you sure you want to add this data?")) {
-  $.post("./php/saveCottage.php", // <---THE LOCATION OF THE FILE saveNewAccount.php
+  $.post("saveCottage.php", // <---THE LOCATION OF THE FILE saveNewAccount.php
   {
     IImage: image_data,
     CotName: cottage_name, //<--- ASIGN THE DATA FROM INPUT BOXES TO EACH COLUMNS IN THE DATA BASE
@@ -230,7 +230,7 @@ function closeAddCottageOffcanvas() {
 // THE FUNCTION TO POST THE DATA IN THE DATA BASE TO THE HTML TABLE 
 function getBooking() {
 
-    $.get("./php/getBooking.php", //<--- THE LINK CONNECTION TO getBooking.php
+    $.get("getBooking.php", //<--- THE LINK CONNECTION TO getBooking.php
     
     // THIS FUNCTION POST ALL DATA IN THE DATA BASE TO THE TABLE IN index.html
     function(data){ 
@@ -264,7 +264,7 @@ function getBooking() {
         
     });
 
-    $.get("./php/getBooking.php", //<--- THE LINK CONNECTION TO getBooking.php
+    $.get("getBooking.php", //<--- THE LINK CONNECTION TO getBooking.php
     
      // THIS FUNCTION POST ALL DATA IN THE DATA BASE TO THE TABLE IN bookingRecords.html
     function(data){ 
